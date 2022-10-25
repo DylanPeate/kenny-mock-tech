@@ -25,7 +25,6 @@ const Todo = () => {
         console.log(filter.filter, 'filter value')
     }
 
-
     return (
         <>
             <div>
@@ -41,17 +40,12 @@ const Todo = () => {
             </div>
             <ul>
                 {todos.map((todo) => {
-
-                    return <li key={todo.id}>
-
+                    return <li key={todo.id} className={todo.completed ? 'complete' : 'notComplete'}>
                         <SingleTodo todo={todo} filter={filter.filter} />
-
                     </li>
                 })}
             </ul>
-
         </>
-        // <p>Hello</p>
     )
 }
 

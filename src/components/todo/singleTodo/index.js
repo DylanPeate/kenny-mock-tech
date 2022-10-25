@@ -5,17 +5,12 @@ const SingleTodo = (props) => {
 
     let todo = props.todo
     let filter = props.filter
-    // console.log(filter, '<===FILTER')
     const [status, setStatus] = useState(props.todo.completed)
-
-
 
     useEffect(() => {
         todo.completed = status
         console.log(status, filter, 'status')
     }, [status, filter, todo])
-
-
 
     return (
         <>
