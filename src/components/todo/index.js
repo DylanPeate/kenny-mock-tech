@@ -15,14 +15,22 @@ const Todo = () => {
         //     console.log(data, "<== Data")
         //     return data
         // }
-        fetch('https://jsonplaceholder.typicode.com/todos')
-            .then(response => response.json())
-            .then(json => setTodos(json))
+
+        const fetchTodos = async () => {
+            const response = await fetch('https://jsonplaceholder.typicode.com/todos')
+            const data = await response.json()
+            setTodos(data)
+        }
+
+        fetchTodos()
+
+        // fetch('https://jsonplaceholder.typicode.com/todos')
+        //     .then(response => response.json())
+        //     .then(json => setTodos(json))
     }, [])
 
     const changeFilter = (value) => {
         setFilter({ filter: value })
-        console.log(filter.filter, 'filter value')
     }
 
     return (

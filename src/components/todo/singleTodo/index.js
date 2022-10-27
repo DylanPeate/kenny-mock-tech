@@ -9,7 +9,6 @@ const SingleTodo = (props) => {
 
     useEffect(() => {
         todo.completed = status
-        console.log(status, filter, 'status')
     }, [status, filter, todo])
 
     return (
